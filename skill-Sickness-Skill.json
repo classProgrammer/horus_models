@@ -1,0 +1,768 @@
+{
+  "name": "Sickness Skill",
+  "type": "dialog",
+  "language": "de",
+  "skill_id": "2c2ae222-8138-49a4-b219-44008ece4175",
+  "workspace": {
+    "intents": [
+      {
+        "intent": "AreYouBot",
+        "examples": [
+          {
+            "text": "Was bist du?"
+          },
+          {
+            "text": "Bist du eine Maschiene"
+          },
+          {
+            "text": "Bit du ein Chatbot?"
+          },
+          {
+            "text": "Wer bist du?"
+          },
+          {
+            "text": "roboter?"
+          },
+          {
+            "text": "bot?"
+          },
+          {
+            "text": "mensch?"
+          },
+          {
+            "text": "Bist du ein Roboter"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "Hello",
+        "examples": [
+          {
+            "text": "Grüß Gott"
+          },
+          {
+            "text": "Grüß Sie"
+          },
+          {
+            "text": "Hello"
+          },
+          {
+            "text": "Hallöchen"
+          },
+          {
+            "text": "Gott zum Gruße"
+          },
+          {
+            "text": "Hallo"
+          },
+          {
+            "text": "Hi"
+          },
+          {
+            "text": "Hallo Bot"
+          },
+          {
+            "text": "Sup"
+          },
+          {
+            "text": "Ahoi"
+          },
+          {
+            "text": "Alles Rodger"
+          },
+          {
+            "text": "Bist du da"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "SubmitMood",
+        "examples": [
+          {
+            "text": "mega"
+          },
+          {
+            "text": "Gut"
+          },
+          {
+            "text": "ok"
+          },
+          {
+            "text": "super"
+          },
+          {
+            "text": "toll"
+          },
+          {
+            "text": "geht so"
+          },
+          {
+            "text": "nicht so toll"
+          },
+          {
+            "text": "ausgezeichnet"
+          },
+          {
+            "text": "spitze"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "Bye",
+        "examples": [
+          {
+            "text": "adieu"
+          },
+          {
+            "text": "Bye"
+          },
+          {
+            "text": "Ciao"
+          },
+          {
+            "text": "Tschau"
+          },
+          {
+            "text": "Auf Wiedersehen"
+          },
+          {
+            "text": "wiedersehen"
+          },
+          {
+            "text": "tschüss"
+          },
+          {
+            "text": "tschüs"
+          },
+          {
+            "text": "Machs gut"
+          },
+          {
+            "text": "Bis dann"
+          },
+          {
+            "text": "bis bald"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "HowAreYou",
+        "examples": [
+          {
+            "text": "Was geht ab"
+          },
+          {
+            "text": "Alles cool"
+          },
+          {
+            "text": "Wie gehts"
+          },
+          {
+            "text": "Wie geht es dir"
+          },
+          {
+            "text": "Alles senkrecht"
+          },
+          {
+            "text": "Wie bist du drauf"
+          },
+          {
+            "text": "Wie ist deine Stimmung"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "Sick",
+        "examples": [
+          {
+            "text": "Krankmeldung"
+          },
+          {
+            "text": "Ich habe durchfall"
+          },
+          {
+            "text": "mit geht es nicht gut"
+          },
+          {
+            "text": "Ich bin krank"
+          },
+          {
+            "text": "krank"
+          },
+          {
+            "text": "krank melden"
+          },
+          {
+            "text": "Ich habe Kopfschmerzen"
+          },
+          {
+            "text": "Ich habe die Grippe"
+          },
+          {
+            "text": "Ich bin unpässlich"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "WhatCanYouDo",
+        "examples": [
+          {
+            "text": "Was kannst du"
+          },
+          {
+            "text": "Wie kannst du helfen"
+          },
+          {
+            "text": "Was kannst du tun"
+          },
+          {
+            "text": "Was kannst du machen"
+          }
+        ],
+        "description": ""
+      },
+      {
+        "intent": "Thanks",
+        "examples": [
+          {
+            "text": "super"
+          },
+          {
+            "text": "das war hilfreich, danke"
+          },
+          {
+            "text": "dank dir!"
+          },
+          {
+            "text": "besten Dank"
+          },
+          {
+            "text": "merci"
+          },
+          {
+            "text": "Danke"
+          },
+          {
+            "text": "Vielen Dank"
+          }
+        ],
+        "description": ""
+      }
+    ],
+    "entities": [
+      {
+        "entity": "sys-time",
+        "values": [],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "dob",
+        "values": [
+          {
+            "type": "patterns",
+            "value": "DOB_PATTERN",
+            "patterns": [
+              "\\d{2}.\\d{2}.\\d{4}"
+            ]
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "personName",
+        "values": [
+          {
+            "type": "patterns",
+            "value": "NAME_PATTERN",
+            "patterns": [
+              "^(([A-ZÜÖÄÜÖÄß]{1}[a-zöäüüöäß]{1,}) (([A-ZÜÖÄÜÖÄß]{1}[a-zöäüüöäß]{1,}) ?){1,})$"
+            ]
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "sys-date",
+        "values": [],
+        "fuzzy_match": true
+      }
+    ],
+    "metadata": {
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      }
+    },
+    "webhooks": [
+      {
+        "url": "https://resteasy.azurewebsites.net/watson/webhook",
+        "name": "main_webhook",
+        "headers": []
+      }
+    ],
+    "dialog_nodes": [
+      {
+        "type": "event_handler",
+        "output": {
+          "text": {
+            "values": [
+              "Dein Geburtsdatum bitte"
+            ],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "slot_10_1575966464072",
+        "event_name": "focus",
+        "dialog_node": "handler_12_1575966464072",
+        "previous_sibling": "handler_11_1575966464072"
+      },
+      {
+        "type": "event_handler",
+        "output": {
+          "text": {
+            "values": [
+              "Bitte Geburtsdatum eingeben"
+            ],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "slot_10_1575966464072",
+        "event_name": "nomatch",
+        "dialog_node": "handler_13_1575966464072",
+        "previous_sibling": "handler_12_1575966464072"
+      },
+      {
+        "type": "event_handler",
+        "output": {},
+        "parent": "slot_10_1575966464072",
+        "context": {
+          "dob": "@sys-date"
+        },
+        "conditions": "@sys-date",
+        "event_name": "input",
+        "dialog_node": "handler_11_1575966464072"
+      },
+      {
+        "type": "event_handler",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Bitte gib deinen Namen an."
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_3_1575966464069",
+        "event_name": "focus",
+        "dialog_node": "handler_14_1575966464072",
+        "previous_sibling": "response_17_1575966464072"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "text": {
+            "values": [
+              "$webhook_result_1.error"
+            ],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "node_3_1575966464069",
+        "next_step": {
+          "behavior": "jump_to",
+          "selector": "body",
+          "dialog_node": "node_9_1575965479565"
+        },
+        "conditions": "$webhook_result_1.error",
+        "dialog_node": "response_16_1575966464072",
+        "previous_sibling": "response_15_1575966464072"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "text": {
+            "values": [],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "node_3_1575966464069",
+        "conditions": "anything_else",
+        "dialog_node": "response_17_1575966464072",
+        "previous_sibling": "response_16_1575966464072"
+      },
+      {
+        "type": "slot",
+        "output": {},
+        "parent": "node_3_1575966464069",
+        "variable": "$personName",
+        "dialog_node": "slot_6_1575966464072",
+        "previous_sibling": "handler_14_1575966464072"
+      },
+      {
+        "type": "slot",
+        "output": {},
+        "parent": "node_3_1575966464069",
+        "variable": "$dob",
+        "dialog_node": "slot_10_1575966464072",
+        "previous_sibling": "slot_6_1575966464072"
+      },
+      {
+        "type": "response_condition",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Gute Besserung $personName!"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "parent": "node_3_1575966464069",
+        "conditions": "$webhook_result_1.OK",
+        "dialog_node": "response_15_1575966464072"
+      },
+      {
+        "type": "event_handler",
+        "output": {
+          "text": {
+            "values": [
+              "Dein Name Bitte"
+            ],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "slot_6_1575966464072",
+        "event_name": "focus",
+        "dialog_node": "handler_8_1575966464072",
+        "previous_sibling": "handler_7_1575966464072"
+      },
+      {
+        "type": "event_handler",
+        "output": {
+          "text": {
+            "values": [
+              "Bitte Namen eingeben"
+            ],
+            "selection_policy": "sequential"
+          }
+        },
+        "parent": "slot_6_1575966464072",
+        "event_name": "nomatch",
+        "dialog_node": "handler_9_1575966464072",
+        "previous_sibling": "handler_8_1575966464072"
+      },
+      {
+        "type": "event_handler",
+        "output": {},
+        "parent": "slot_6_1575966464072",
+        "context": {
+          "personName": "@personName.literal"
+        },
+        "conditions": "@personName.literal",
+        "event_name": "input",
+        "dialog_node": "handler_7_1575966464072"
+      },
+      {
+        "type": "standard",
+        "title": "Goodbye",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Tschau"
+                },
+                {
+                  "text": "Auf Wiedersehen"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "conditions": "#Bye",
+        "digress_in": "does_not_return",
+        "dialog_node": "node_2_1575966269739",
+        "previous_sibling": "node_1_1575966269737"
+      },
+      {
+        "type": "standard",
+        "title": "Fallback",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Ich habe Sie nicht verstanden. Bitte formulieren Sie Ihre Aussage neu."
+                },
+                {
+                  "text": "Können Sie Ihre Aussage anders formulieren? Ich verstehe nicht, was Sie meinen."
+                },
+                {
+                  "text": "Ich habe nicht verstanden, was Sie meinen."
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "conditions": "anything_else",
+        "dialog_node": "Andernfalls",
+        "previous_sibling": "node_10_1575909498518",
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "title": "How Are You",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Robotastisch! Und wie siehts bei dir aus?"
+                },
+                {
+                  "text": "Unter Strom, und selbst?"
+                },
+                {
+                  "text": "Voller Energie, und wie geht es dir?"
+                },
+                {
+                  "text": "Bottastisch! Wie gehts dir?"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "random"
+            }
+          ]
+        },
+        "conditions": "#HowAreYou",
+        "dialog_node": "node_9_1575966893139",
+        "previous_sibling": "node_10_1575967012533"
+      },
+      {
+        "type": "standard",
+        "title": "Thanks",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Keine Ursache!"
+                },
+                {
+                  "text": "Immer Gerne"
+                },
+                {
+                  "text": "Kein Problem"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "conditions": "#Thanks",
+        "digress_in": "does_not_return",
+        "dialog_node": "node_1_1575966269737",
+        "previous_sibling": "node_9_1575914380008"
+      },
+      {
+        "type": "standard",
+        "title": "Submit Mood",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "OK, wie kann ich dir helfen?"
+                },
+                {
+                  "text": "OK, was kann ich für dich tun?"
+                },
+                {
+                  "text": "Rodger. Wie kann ich behilflich sein?"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "random"
+            }
+          ]
+        },
+        "conditions": "#SubmitMood",
+        "dialog_node": "node_10_1575967012533",
+        "previous_sibling": "node_9_1575965479565"
+      },
+      {
+        "type": "standard",
+        "title": "Greeting",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Hallo, wie kann ich helfen?"
+                },
+                {
+                  "text": "Guten Tag, hier der 3 Banken IT  Chatbot wie kann ich helfen?"
+                },
+                {
+                  "text": "Was kann ich für Sie tun?"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "conditions": "#Hello",
+        "dialog_node": "node_10_1575909498518",
+        "previous_sibling": "node_3_1575966464069"
+      },
+      {
+        "type": "frame",
+        "title": "Collect Sicknes Data",
+        "output": {},
+        "actions": [
+          {
+            "name": "main_webhook",
+            "type": "webhook",
+            "parameters": {
+              "dob": "$dob",
+              "intent": "Sickness",
+              "person_name": "$personName"
+            },
+            "result_variable": "webhook_result_1"
+          }
+        ],
+        "metadata": {
+          "_customization": {
+            "mcr": true
+          }
+        },
+        "conditions": "#Sick",
+        "dialog_node": "node_3_1575966464069",
+        "previous_sibling": "node_2_1575966269739"
+      },
+      {
+        "type": "standard",
+        "title": "Are You  A Bot",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Ich bin ein Chatbot"
+                },
+                {
+                  "text": "Ich bin eine Maschiene"
+                },
+                {
+                  "text": "Ich bin ein Roboter"
+                },
+                {
+                  "text": "Bip bu Bip"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "random"
+            }
+          ]
+        },
+        "conditions": "#AreYouBot",
+        "dialog_node": "node_9_1575966664181",
+        "previous_sibling": "node_9_1575966893139"
+      },
+      {
+        "type": "standard",
+        "title": "What Can You Do?",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Ich kann eine Krankmeldung durchführen"
+                },
+                {
+                  "text": "Ich kann dich krank melden"
+                },
+                {
+                  "text": "Ich kann Krankmeldungen durchführen"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "conditions": "#WhatCanYouDo",
+        "dialog_node": "node_9_1575914380008",
+        "previous_sibling": "node_9_1575966664181"
+      },
+      {
+        "type": "standard",
+        "title": "Default Welcome",
+        "output": {
+          "generic": [
+            {
+              "values": [
+                {
+                  "text": "Hallo, Wie kann ich helfen?"
+                },
+                {
+                  "text": "Was kann ich für Sie tun?"
+                }
+              ],
+              "response_type": "text",
+              "selection_policy": "sequential"
+            }
+          ]
+        },
+        "context": {
+          "dob": null,
+          "personName": null
+        },
+        "conditions": "welcome",
+        "digress_in": "does_not_return",
+        "dialog_node": "node_9_1575965479565"
+      }
+    ],
+    "counterexamples": [
+      {
+        "text": "12.12.2012"
+      }
+    ],
+    "system_settings": {
+      "disambiguation": {
+        "prompt": "Did you mean:",
+        "enabled": true,
+        "randomize": true,
+        "max_suggestions": 5,
+        "suggestion_text_policy": "title"
+      },
+      "human_agent_assist": {
+        "prompt": "Meinten Sie:"
+      }
+    },
+    "learning_opt_out": false
+  },
+  "description": "",
+  "workspace_id": "2c2ae222-8138-49a4-b219-44008ece4175"
+}
